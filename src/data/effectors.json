@@ -1,0 +1,5 @@
+[
+  { "id": "PpCSEP_00412", "pathogen": "P. polysora", "disease": "Southern corn rust", "status": "illustrative" },
+  { "id": "See1", "pathogen": "U. maydis", "disease": "Corn smut", "status": "illustrative" },
+  { "id": "FvEcp2-like", "pathogen": "F. verticillioides", "disease": "Fusarium ear rot", "status": "illustrative" }
+]
