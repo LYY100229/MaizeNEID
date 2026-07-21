@@ -1,5 +1,3 @@
-
-
 :root { --ink:#281b1d; --muted:#725e64; --paper:#f8f3f5; --lime:#a50046; --line:#dfd1d6; --blue:#a50046; --orange:#5a3435; }
 .szu-logo{display:block;object-fit:contain;background:#fff}.welcome-identity,.topbar-identity{display:flex;align-items:center;gap:18px}.welcome-logo{width:282px;height:72px;padding:5px 8px;border-radius:4px}.topbar-logo{width:164px;height:46px;padding:3px 5px;border:1px solid #eadde1;border-radius:3px}
 .szu-logo{background:transparent;padding:0;border:0}.welcome-logo{width:282px;height:72px}.topbar-logo{width:164px;height:46px}

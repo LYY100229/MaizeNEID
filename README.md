@@ -2,7 +2,7 @@
 
 **Maize NLR-Effector Interact Database (MaizeNEID)** is a Yang Lab resource for exploring precomputed structural evidence for predicted interactions between maize NLR immune receptors and pathogen effectors.
 
-> The records included in this repository are illustrative prototype data. Replace them with curated prediction outputs before scientific release. Predictions are hypothesis-prioritization evidence and do not establish biological interaction or function.
+The current data release contains the completed Yang Lab MEGADOCK summary for the supplied Fusarium Effector dataset: 127 mature cytoplasmic Effector candidates, 164 maize receptor protein inputs, and 20,828 scored pairs. AF-Multimer, AlphaFold 3, complex structures, interface residues, and experimental validation are not included in this release.
 
 ## Repository structure
 
@@ -15,7 +15,8 @@ MaizeNEID/
 │   └── data/
 │       ├── interactions.json    # Pair-level evidence displayed by the site
 │       ├── effectors.json       # Effector metadata
-│       └── nlrs.json            # NLR metadata
+│       ├── nlrs.json            # NLR metadata
+│       └── dataset-metadata.json# Dataset version and evidence availability
 ├── public/                      # Static logos and public assets
 ├── index.html
 ├── package.json
@@ -54,15 +55,17 @@ After the repository is linked, every commit to `main` triggers a new deployment
 
 ## Updating scientific records
 
-Pair-level evidence currently comes from `src/data/interactions.json`. Each record contains:
+Pair-level evidence comes from `src/data/interactions.json`. Each record contains:
 
 - stable interaction ID;
 - effector and NLR identifiers;
 - pathogen metadata;
-- method-specific MEGADOCK, AlphaFold-Multimer, and AlphaFold 3 evidence;
-- a consensus evidence count.
+- the original MEGADOCK score;
+- global, Effector-specific, and NLR-specific ranks and percentiles;
+- exact union-selection flags;
+- monomer mean pLDDT values and classes from the run manifest.
 
-Keep method-specific scores in their native fields and avoid treating raw values from different methods as directly equivalent. Large structure files should eventually be hosted in object storage or a public research repository and referenced by stable URLs rather than committed directly to GitHub.
+MEGADOCK is the only available pair-level evidence channel in the current release. The interface intentionally leaves AF-Multimer, AlphaFold 3, structure, and interface-residue fields blank. Large structure files should eventually be hosted in object storage or a public research repository and referenced by stable URLs rather than committed directly to GitHub.
 
 ## Routine update workflow
 
