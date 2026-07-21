@@ -2,7 +2,7 @@
 
 **Maize NLR-Effector Interact Database (MaizeNEID)** is a Yang Lab resource for exploring precomputed structural evidence for predicted interactions between maize NLR immune receptors and pathogen effectors.
 
-The current data release contains the completed Yang Lab MEGADOCK summary for the supplied Fusarium Effector dataset: 127 mature cytoplasmic Effector candidates, 164 maize receptor protein inputs, and 20,828 scored pairs. AF-Multimer, AlphaFold 3, complex structures, interface residues, and experimental validation are not included in this release.
+The current data release displays only the 911 entries from the latest `union_g2_e3_n3` candidate set (global top 2% ∪ Effector top 3 ∪ NLR top 3), which were prepared as AF-Multimer inputs. The source set comprises 127 supplied Fusarium Effector candidates and 164 maize receptor protein inputs. AF-Multimer, AlphaFold 3, complex structures, interface residues, and experimental validation are not included in this release.
 
 ## Repository structure
 
@@ -55,17 +55,17 @@ After the repository is linked, every commit to `main` triggers a new deployment
 
 ## Updating scientific records
 
-Pair-level evidence comes from `src/data/interactions.json`. Each record contains:
+Pair-level evidence comes from `src/data/interactions.json`. Each displayed record contains:
 
 - stable interaction ID;
 - effector and NLR identifiers;
 - pathogen metadata;
 - the original MEGADOCK score;
-- global, Effector-specific, and NLR-specific ranks and percentiles;
-- exact union-selection flags;
-- monomer mean pLDDT values and classes from the run manifest.
+- global, Effector-specific, and NLR-specific ranks;
+- exact `union_g2_e3_n3` selection flags;
+- monomer mean pLDDT values from the run manifest.
 
-MEGADOCK is the only available pair-level evidence channel in the current release. The interface intentionally leaves AF-Multimer, AlphaFold 3, structure, and interface-residue fields blank. Large structure files should eventually be hosted in object storage or a public research repository and referenced by stable URLs rather than committed directly to GitHub.
+MEGADOCK is the only available pair-level evidence channel in the current release. The interface intentionally leaves AF-Multimer, AlphaFold 3, structure, and interface-residue fields blank. The table supports NLR class/ID and pathogen filters, pagination, and downloading checked pairs as a ZIP containing FASTA sequences plus a TSV evidence table.
 
 ## Routine update workflow
 
